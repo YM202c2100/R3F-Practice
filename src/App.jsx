@@ -1,7 +1,9 @@
+import MainTitle from "./components/MainTitle"
+
 function App() {
   return (
     <>
-      <div>App page</div>
+      <MainTitle/>
     </>
   )
 }
