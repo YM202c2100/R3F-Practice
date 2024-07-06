@@ -1,7 +1,9 @@
-import { Canvas } from "@react-three/fiber"
+import { Canvas, useLoader } from "@react-three/fiber"
 import { Center, Text3D } from "@react-three/drei"
+import { TextureLoader } from "three"
 
 function Examples(){
+  const matcapTexture = useLoader(TextureLoader, "matcapTexture.png")
   return(
     <div>
       <h2 
@@ -15,7 +17,7 @@ function Examples(){
         <Center>
           <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
             3D Text
-            <meshBasicMaterial color={"red"}/>
+            <meshMatcapMaterial matcap={matcapTexture}/>
           </Text3D>
         </Center>
       </Canvas>
