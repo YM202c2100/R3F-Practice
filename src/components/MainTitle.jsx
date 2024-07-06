@@ -12,6 +12,9 @@ function MainTitle(){
       </h1>
       <img 
         src="GeometryImage.png"
+        className="
+          w-full md:w-[55%]
+          md:ml-10 md:mt-10"
       />
     </div>
   )
