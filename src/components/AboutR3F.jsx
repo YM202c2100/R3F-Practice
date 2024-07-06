@@ -17,7 +17,7 @@ function AboutR3F(){
       </p>
     </div>
 
-    <div className="absolute top-0 -z-10 md:static  w-full h-full md:h-[300px] md:w-1/2  blur-sm">
+    <div className="absolute top-0 -z-10 md:static  w-full h-full md:h-[300px] md:w-1/2  blur-sm md:blur-none">
       <Canvas>
         <RotationMesh/>
       </Canvas>
