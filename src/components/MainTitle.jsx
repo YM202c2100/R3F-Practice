@@ -1,10 +1,15 @@
 
 function MainTitle(){
   return(
-    <div>
-      <h1>Practice for R3F</h1>
+    <div className="relative">
+      <h1 
+        className="
+          absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        Practice for R3F
+      </h1>
       <img 
-        src="GeometryImage.png" 
+        src="GeometryImage.png"
       />
     </div>
   )
