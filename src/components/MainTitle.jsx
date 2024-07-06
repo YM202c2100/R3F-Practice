@@ -4,7 +4,7 @@ function MainTitle(){
     <div className="relative">
       <h1 
         className="
-          absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0
           text-5xl font-bold text-[#ed6969]
           text-center"
       >
