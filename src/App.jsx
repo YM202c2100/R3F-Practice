@@ -5,7 +5,9 @@ function App() {
   return (
     <div className="container  mx-auto">
       <MainTitle/>
-      <AboutR3F />
+      <div className="relative">
+        <AboutR3F />
+      </div>
     </div>
   )
 }

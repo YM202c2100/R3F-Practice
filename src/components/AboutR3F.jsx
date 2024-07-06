@@ -14,13 +14,15 @@ function AboutR3F(){
         webサイト上で3Dモデルを簡単に扱うためのJavaScriptライブラリのひとつにThree.jsがある。React-three-fiberは、そのthree.jsをReactでより簡単に使用できるようにしたReactレンダラーである。
       </p>
     </div>
-    
-    <Canvas>
-      <mesh>
-        <torusKnotGeometry/>
-        <meshNormalMaterial/>
-      </mesh>
-    </Canvas>
+
+    <div className="absolute top-0 -z-10 w-full h-full">
+      <Canvas>
+        <mesh>
+          <torusKnotGeometry/>
+          <meshNormalMaterial/>
+        </mesh>
+      </Canvas>
+    </div>
   </>)
 }
 
