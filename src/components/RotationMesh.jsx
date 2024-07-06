@@ -12,7 +12,7 @@ function RotationMesh(){
   })
 
   return(
-    <mesh ref={meshRef}>
+    <mesh ref={meshRef} scale={1.5}>
       <torusKnotGeometry/>
       <meshNormalMaterial/>
     </mesh>
