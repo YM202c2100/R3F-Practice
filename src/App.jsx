@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="container  mx-auto">
       <MainTitle/>
-      <div className="relative md:flex">
+      <div className="relative md:flex items-center">
         <AboutR3F />
       </div>
     </div>
