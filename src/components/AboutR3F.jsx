@@ -1,6 +1,6 @@
-
+import { Canvas } from "@react-three/fiber"
 function AboutR3F(){
-  return(
+  return(<>
     <div>
       <h2 
         className="
@@ -14,7 +14,14 @@ function AboutR3F(){
         webサイト上で3Dモデルを簡単に扱うためのJavaScriptライブラリのひとつにThree.jsがある。React-three-fiberは、そのthree.jsをReactでより簡単に使用できるようにしたReactレンダラーである。
       </p>
     </div>
-  )
+    
+    <Canvas>
+      <mesh>
+        <torusKnotGeometry/>
+        <meshNormalMaterial/>
+      </mesh>
+    </Canvas>
+  </>)
 }
 
 export default AboutR3F
