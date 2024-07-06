@@ -13,7 +13,7 @@ function Examples(){
       >
         Examples
       </h2>
-      <Canvas>
+      <Canvas className="bg-gray-800">
         <Center>
           <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
             3D Text
