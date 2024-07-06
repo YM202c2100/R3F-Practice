@@ -1,5 +1,5 @@
 import { Canvas, useLoader } from "@react-three/fiber"
-import { Center, Text3D } from "@react-three/drei"
+import { OrbitControls, Center, Text3D } from "@react-three/drei"
 import { TextureLoader } from "three"
 
 function Examples(){
@@ -14,6 +14,7 @@ function Examples(){
         Examples
       </h2>
       <Canvas className="bg-gray-800">
+        <OrbitControls/>
         <Center>
           <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
             3D Text
