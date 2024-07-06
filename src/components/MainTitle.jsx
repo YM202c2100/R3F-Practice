@@ -13,7 +13,7 @@ function MainTitle(){
       <img 
         src="GeometryImage.png"
         className="
-          w-full md:w-[55%]
+          w-full md:w-1/2
           md:ml-10 md:mt-10
           md:rounded-3xl"
       />
