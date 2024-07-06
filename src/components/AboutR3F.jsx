@@ -15,7 +15,7 @@ function AboutR3F(){
       </p>
     </div>
 
-    <div className="absolute top-0 -z-10 w-full h-full">
+    <div className="absolute top-0 -z-10 w-full h-full blur-sm">
       <Canvas>
         <mesh>
           <torusKnotGeometry/>
