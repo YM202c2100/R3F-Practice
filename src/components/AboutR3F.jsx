@@ -4,6 +4,7 @@ function AboutR3F(){
     <div>
       <h2 
         className="
+mb-10
           text-5xl font-bold text-[#4f5584]
           text-center
         ">React-three-fiber(R3F) とは</h2>
