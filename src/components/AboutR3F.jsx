@@ -1,4 +1,6 @@
 import { Canvas } from "@react-three/fiber"
+import RotationMesh from "./RotationMesh"
+
 function AboutR3F(){
   return(<>
     <div>
@@ -17,10 +19,7 @@ function AboutR3F(){
 
     <div className="absolute top-0 -z-10 w-full h-full blur-sm">
       <Canvas>
-        <mesh>
-          <torusKnotGeometry/>
-          <meshNormalMaterial/>
-        </mesh>
+        <RotationMesh/>
       </Canvas>
     </div>
   </>)
