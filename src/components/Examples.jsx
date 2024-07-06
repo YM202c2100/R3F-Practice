@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber"
-import { Text3D } from "@react-three/drei"
+import { Center, Text3D } from "@react-three/drei"
 
 function Examples(){
   return(
@@ -12,10 +12,12 @@ function Examples(){
         Examples
       </h2>
       <Canvas>
-        <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
-          3D
-          <meshBasicMaterial color={"red"}/>
-        </Text3D>
+        <Center>
+          <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
+            3D
+            <meshBasicMaterial color={"red"}/>
+          </Text3D>
+        </Center>
       </Canvas>
     </div>
   )
