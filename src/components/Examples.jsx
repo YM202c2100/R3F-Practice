@@ -14,7 +14,7 @@ function Examples(){
       <Canvas>
         <Center>
           <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
-            3D
+            3D Text
             <meshBasicMaterial color={"red"}/>
           </Text3D>
         </Center>
