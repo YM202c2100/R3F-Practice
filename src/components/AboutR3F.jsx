@@ -3,7 +3,7 @@ import RotationMesh from "./RotationMesh"
 
 function AboutR3F(){
   return(<>
-    <div>
+    <div className="md:w-1/2">
       <h2 
         className="
           mb-10
@@ -17,7 +17,7 @@ function AboutR3F(){
       </p>
     </div>
 
-    <div className="absolute top-0 -z-10 w-full h-full blur-sm">
+    <div className="absolute top-0 -z-10 md:static  w-full h-full md:w-1/2  blur-sm">
       <Canvas>
         <RotationMesh/>
       </Canvas>
