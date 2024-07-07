@@ -11,13 +11,6 @@ function App() {
         <AboutR3F />
       </div>
 
-      <h2 
-        className="
-          text-center
-          text-5xl font-bold text-[#72c371]"
-      >
-        Examples
-      </h2>
       <div className="flex flex-col items-center md:flex-row">
         <Example/>
       </div>
