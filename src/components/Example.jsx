@@ -5,14 +5,6 @@ import { TextureLoader } from "three"
 function Examples(){
   const matcapTexture = useLoader(TextureLoader, "matcapTexture.png")
   return(<>
-    <h2 
-    className="
-    text-center
-    text-5xl font-bold text-[#72c371]"
-    >
-      Examples
-    </h2>
-
     <div className="w-4/5 max-w-xl">
       <Canvas className="bg-gray-800">
         <OrbitControls/>
