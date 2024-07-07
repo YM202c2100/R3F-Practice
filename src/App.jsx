@@ -13,7 +13,7 @@ function App() {
         <AboutR3F />
       </div>
 
-      <div className="flex flex-col items-center md:flex-row">
+      <div className="flex flex-col items-center md:flex-row md:justify-around">
         <Example>
           <SampleText3D/>
         </Example>
