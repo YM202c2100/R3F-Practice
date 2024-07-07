@@ -18,7 +18,9 @@ function App() {
       >
         Examples
       </h2>
-      <Example/>
+      <div className="flex flex-col items-center md:flex-row">
+        <Example/>
+      </div>
     </div>
   )
 }
