@@ -3,7 +3,7 @@ import { OrbitControls, Center } from "@react-three/drei"
 
 function Example({children}){
   return(<>
-    <div className="w-4/5 max-w-xl h-[300px] md:w-2/5">
+    <div className="w-4/5 max-w-xl aspect-square md:w-2/5">
       <Canvas className="bg-gray-800 rounded-3xl">
         <OrbitControls/>
         <Center>
