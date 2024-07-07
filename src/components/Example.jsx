@@ -6,7 +6,7 @@ function Examples(){
   const matcapTexture = useLoader(TextureLoader, "matcapTexture.png")
   return(<>
     <div className="w-4/5 max-w-xl h-[300px]">
-      <Canvas className="bg-gray-800">
+      <Canvas className="bg-gray-800 rounded-3xl">
         <OrbitControls/>
         <Center>
           <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
