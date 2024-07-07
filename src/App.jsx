@@ -1,6 +1,7 @@
 import AboutR3F from "./components/AboutR3F"
 import Example from "./components/Example"
 import MainTitle from "./components/MainTitle"
+import SampleShader from "./components/SampleShader"
 import SampleText3D from "./components/SampleText3D"
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
       <div className="flex flex-col items-center md:flex-row">
         <Example>
           <SampleText3D/>
+        </Example>
+        <Example>
+          <SampleShader/>
         </Example>
       </div>
     </div>
