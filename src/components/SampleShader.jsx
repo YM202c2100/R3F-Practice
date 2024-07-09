@@ -5,10 +5,12 @@ import { Center, OrbitControls } from "@react-three/drei"
 
 function SampleShader(){
   return(
-    <Canvas>
+    <Canvas
+      camera={{position:[0, 0.5, 1]}}
+    >
       <OrbitControls/>
       <Center>
-        <mesh>
+        <mesh rotation={[-Math.PI/2, 0, Math.PI/4]}>
           <planeGeometry args={[1, 1, 128, 128]}/>
           <shaderMaterial
             vertexShader={vertexShader}
