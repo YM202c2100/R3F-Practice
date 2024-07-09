@@ -17,7 +17,7 @@ void main(){
                     sin(modelPosition.z * uWaveFreqZ + uTime*0.5) *
                     uWaveElevation;
   
-  elevation += cnoise(vec3(modelPosition.xz * waveBumpyFreq, uTime * waveBumpySpeed)) * waveBumpyElevation;
+  elevation -= abs(cnoise(vec3(modelPosition.xz * waveBumpyFreq, uTime * waveBumpySpeed)) * waveBumpyElevation);
 
   modelPosition.y += elevation;
 
