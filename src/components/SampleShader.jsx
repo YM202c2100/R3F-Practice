@@ -23,9 +23,6 @@ function SampleShader(){
         fragmentShader={fragmentShader}
         uniforms={{
           uTime:{value:0},
-          uWaveFreqX:{value:3.5},
-          uWaveFreqZ:{value:2.0},
-          uWaveElevation:{value:0.2},
           uDepthColor:{value:new Color("#255874")},
           uSurfaceColor:{value:new Color("#a6cfe8")}
         }}
