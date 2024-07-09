@@ -18,7 +18,7 @@ void main(){
                     uWaveElevation;
   
   for(float i=1.0; i<4.0; i++){
-    elevation -= abs(cnoise(vec3(modelPosition.xz * waveBumpyFreq, uTime * waveBumpySpeed)) * waveBumpyElevation);
+    elevation -= abs(cnoise(vec3(modelPosition.xz * waveBumpyFreq * i, uTime * waveBumpySpeed)) * waveBumpyElevation / i);
   }
 
   modelPosition.y += elevation;
