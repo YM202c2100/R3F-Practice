@@ -14,10 +14,13 @@ function App() {
       </div>
 
       <div className="flex flex-col items-center md:flex-row md:justify-around">
-        <Example>
+        <Example title={"3D Text"}>
           <SampleText3D/>
         </Example>
-        <Example camera={{position:[-0.2, 0.8, 0.7]}}>
+        <Example 
+          title={"Shader"}
+          camera={{position:[-0.2, 0.8, 0.7]}}
+        >
           <SampleShader/>
         </Example>
       </div>
