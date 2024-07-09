@@ -7,7 +7,7 @@ function SampleText3D(){
   
   return(
     <Text3D font={"fonts/helvetiker_regular.typeface.json"}>
-      3D Text
+      Drag me!
       <meshMatcapMaterial matcap={matcapTexture}/>
     </Text3D>
   )
