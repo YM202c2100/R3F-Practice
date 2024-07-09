@@ -2,6 +2,7 @@ import vertexShader from "../shaders/sea/vertex.glsl"
 import fragmentShader from "../shaders/sea/fragment.glsl"
 import { Canvas } from "@react-three/fiber"
 import { Center, OrbitControls } from "@react-three/drei"
+import { Color } from "three"
 
 function SampleShader(){
   return(
@@ -18,7 +19,9 @@ function SampleShader(){
             uniforms={{
               uWaveFreqX:{value:3.5},
               uWaveFreqZ:{value:2.0},
-              uWaveElevation:{value:0.2}
+              uWaveElevation:{value:0.2},
+              uDepthColor:{value:new Color("#255874")},
+              uSurfaceColor:{value:new Color("#a6cfe8")}
             }}
           />
         </mesh>
