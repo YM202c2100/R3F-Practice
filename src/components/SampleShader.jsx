@@ -1,15 +1,28 @@
 import vertexShader from "../shaders/sea/vertex.glsl"
 import fragmentShader from "../shaders/sea/fragment.glsl"
 import { Color } from "three"
+import { useRef } from "react"
+import { useFrame } from "@react-three/fiber"
+import { log } from "three/examples/jsm/nodes/Nodes.js"
 
 function SampleShader(){
+  const shaderRef = useRef()
+
+  useFrame((state, delta)=>{
+    if(shaderRef.current){
+      shaderRef.current.uniforms.uTime.value += delta
+    }
+  })
+
   return(
     <mesh rotation={[-Math.PI/2, 0, Math.PI/4]}>
       <planeGeometry args={[1, 1, 128, 128]}/>
       <shaderMaterial
+        ref={shaderRef}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         uniforms={{
+          uTime:{value:0},
           uWaveFreqX:{value:3.5},
           uWaveFreqZ:{value:2.0},
           uWaveElevation:{value:0.2},
