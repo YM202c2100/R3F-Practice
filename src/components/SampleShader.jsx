@@ -15,6 +15,11 @@ function SampleShader(){
           <shaderMaterial
             vertexShader={vertexShader}
             fragmentShader={fragmentShader}
+            uniforms={{
+              uWaveFreqX:{value:3.5},
+              uWaveFreqZ:{value:2.0},
+              uWaveElevation:{value:0.2}
+            }}
           />
         </mesh>
       </Center>
