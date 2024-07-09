@@ -1,5 +1,7 @@
+import { OrbitControls, Center } from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
 
-function Example({children}){
+function Example({children, camera}){
   return(<>
     <div 
       className="
@@ -7,7 +9,12 @@ function Example({children}){
         bg-gray-800
         rounded-3xl"
     >
-      {children}
+      <Canvas camera={camera}>
+        <OrbitControls/>
+        <Center>
+          {children}
+        </Center>
+      </Canvas>
     </div>
   </>)
 }

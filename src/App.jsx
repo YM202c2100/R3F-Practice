@@ -17,7 +17,7 @@ function App() {
         <Example>
           <SampleText3D/>
         </Example>
-        <Example>
+        <Example camera={{position:[0, 0.5, 1.0]}}>
           <SampleShader/>
         </Example>
       </div>
