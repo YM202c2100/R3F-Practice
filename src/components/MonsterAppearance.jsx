@@ -6,6 +6,7 @@ function MonsterAppearance(){
 
   return(<>
     <OrbitControls/>
+    <ambientLight intensity={5}/>
     <primitive object={dragonModel.scene} scale={3}/>
   </>)
 }
