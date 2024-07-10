@@ -3,7 +3,6 @@ import fragmentShader from "../shaders/sea/fragment.glsl"
 import { Color } from "three"
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
-import { log } from "three/examples/jsm/nodes/Nodes.js"
 
 function SampleShader(){
   const shaderRef = useRef()
