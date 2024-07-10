@@ -27,7 +27,7 @@ function App() {
         </Example>
       </div>
 
-      <div>
+      <div className="h-lvh">
         <Canvas>
           <MonsterAppearance/>
         </Canvas>
