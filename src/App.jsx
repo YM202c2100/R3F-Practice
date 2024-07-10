@@ -1,8 +1,10 @@
+import { Canvas } from "@react-three/fiber"
 import AboutR3F from "./components/AboutR3F"
 import Example from "./components/Example"
 import MainTitle from "./components/MainTitle"
 import SampleShader from "./components/SampleShader"
 import SampleText3D from "./components/SampleText3D"
+import MonsterAppearance from "./components/MonsterAppearance"
 
 function App() {
   return (
@@ -23,6 +25,12 @@ function App() {
         >
           <SampleShader/>
         </Example>
+      </div>
+
+      <div>
+        <Canvas>
+          <MonsterAppearance/>
+        </Canvas>
       </div>
     </div>
   )
