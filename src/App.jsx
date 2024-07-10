@@ -6,7 +6,7 @@ import SampleText3D from "./components/SampleText3D"
 
 function App() {
   return (
-    <div className="container  mx-auto">
+    <div className="container  mx-auto space-y-14">
       <MainTitle/>
 
       <div className="relative md:flex items-center">
