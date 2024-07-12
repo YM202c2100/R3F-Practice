@@ -11,4 +11,6 @@ function MonsterAppearance(){
   </>)
 }
 
+useGLTF.preload("models/dragon/scene.gltf")
+
 export default MonsterAppearance
