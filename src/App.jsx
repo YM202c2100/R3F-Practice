@@ -15,7 +15,7 @@ function App() {
         <AboutR3F />
       </div>
 
-      <div className="flex flex-col items-center md:flex-row md:justify-around">
+      <div className="flex flex-col items-center md:flex-row md:justify-around  space-y-10 md:space-y-0">
         <Example title={"3D Text"}>
           <SampleText3D/>
         </Example>
