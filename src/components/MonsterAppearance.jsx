@@ -11,6 +11,14 @@ function MonsterAppearance(){
     action_appear.setLoop(LoopOnce)
     action_appear.clampWhenFinished = true
     action_appear.play()
+
+    const playFlyAction = ()=>{
+      const action_fly = animations.actions.run
+      action_fly.crossFadeFrom(action_appear, 0.5, false).play()
+      animations.mixer.removeEventListener("finished", playFlyAction)
+    }
+
+    animations.mixer.addEventListener("finished", playFlyAction)
   },[])
 
 
