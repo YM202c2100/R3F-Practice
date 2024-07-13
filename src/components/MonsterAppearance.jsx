@@ -9,6 +9,7 @@ function MonsterAppearance(){
   useEffect(()=>{
     const action_appear = animations.actions.special
     action_appear.setLoop(LoopOnce)
+    action_appear.clampWhenFinished = true
     action_appear.play()
   },[])
 
