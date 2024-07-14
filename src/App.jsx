@@ -33,17 +33,15 @@ function App() {
         </Example>
       </div>
 
-      <div ref={inViewRef} className="bg-red-300">Intersection observer用の要素</div>
-
-    </div>
-
-    {inView && 
-      <div className="fixed inset-0">
+      <div 
+        ref={inViewRef}
+        className="h-lvh"
+      >
         <Canvas>
-          <MonsterAppearance/>
+          {inView && <MonsterAppearance/>}
         </Canvas>
       </div>
-    }
+    </div>
   </>)
 }
 
