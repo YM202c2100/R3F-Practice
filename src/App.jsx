@@ -5,8 +5,14 @@ import MainTitle from "./components/MainTitle"
 import SampleShader from "./components/SampleShader"
 import SampleText3D from "./components/SampleText3D"
 import MonsterAppearance from "./components/MonsterAppearance"
+import { useInView } from "react-intersection-observer"
 
 function App() {
+  const [inViewRef, inView, entry] = useInView({
+    triggerOnce:true
+  })
+
+
   return (
     <div className="container  mx-auto space-y-14">
       <MainTitle/>
@@ -27,11 +33,15 @@ function App() {
         </Example>
       </div>
 
-      <div className="h-lvh">
-        <Canvas>
-          <MonsterAppearance/>
-        </Canvas>
-      </div>
+      <div ref={inViewRef} className="bg-red-300">Intersection observer用の要素</div>
+
+      {inView && 
+        <div className="h-lvh">
+          <Canvas>
+            <MonsterAppearance/>
+          </Canvas>
+        </div>
+      }
     </div>
   )
 }
