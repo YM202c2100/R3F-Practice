@@ -9,7 +9,8 @@ import { useInView } from "react-intersection-observer"
 
 function App() {
   const [inViewRef, inView, entry] = useInView({
-    triggerOnce:true
+    triggerOnce:true,
+    threshold:0.5
   })
 
 
