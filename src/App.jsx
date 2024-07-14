@@ -36,7 +36,7 @@ function App() {
       <div ref={inViewRef} className="bg-red-300">Intersection observer用の要素</div>
 
       {inView && 
-        <div className="h-lvh">
+        <div className="fixed inset-0">
           <Canvas>
             <MonsterAppearance/>
           </Canvas>
