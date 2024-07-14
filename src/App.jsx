@@ -13,7 +13,7 @@ function App() {
   })
 
 
-  return (
+  return (<>
     <div className="container  mx-auto space-y-14">
       <MainTitle/>
 
@@ -35,15 +35,16 @@ function App() {
 
       <div ref={inViewRef} className="bg-red-300">Intersection observer用の要素</div>
 
-      {inView && 
-        <div className="fixed inset-0">
-          <Canvas>
-            <MonsterAppearance/>
-          </Canvas>
-        </div>
-      }
     </div>
-  )
+
+    {inView && 
+      <div className="fixed inset-0">
+        <Canvas>
+          <MonsterAppearance/>
+        </Canvas>
+      </div>
+    }
+  </>)
 }
 
 export default App
