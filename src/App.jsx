@@ -37,16 +37,16 @@ function App() {
       <div ref={inViewRef}></div>
     </div>
     
-    {inView &&
-      <div 
-        className="fixed inset-0 overflow-hidden flex justify-center items-center"
-      >
+    <div 
+      className="fixed inset-0 overflow-hidden"
+    >
+      <div className={`absolute w-full h-full flex items-center justify-center ${inView ? "scale-100":"scale-0"} duration-500`}>
         <WarpPortal/>
-        <Canvas>
-          <MonsterAppearance/>
-        </Canvas>
       </div>
-    }
+      <Canvas>
+        {inView && <MonsterAppearance/>}
+      </Canvas>
+    </div>
   </>)
 }
 
