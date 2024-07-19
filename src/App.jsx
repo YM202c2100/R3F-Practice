@@ -34,7 +34,7 @@ function App() {
           <SampleShader/>
         </Example>
       </div>
-      <div ref={inViewRef}></div>
+      <div ref={inViewRef} className="h-10 bg-slate-400"></div>
     </div>
     
     <div 
@@ -43,7 +43,7 @@ function App() {
       <div className={`absolute w-full h-full flex items-center justify-center ${inView ? "scale-100":"scale-0"} duration-500`}>
         <WarpPortal/>
       </div>
-      <Canvas>
+      <Canvas camera={{far:7}}>
         {inView && <MonsterAppearance/>}
       </Canvas>
     </div>
