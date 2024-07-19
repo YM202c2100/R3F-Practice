@@ -34,16 +34,16 @@ function App() {
           <SampleShader/>
         </Example>
       </div>
-
-      <div 
-        ref={inViewRef}
-        className="h-lvh relative overflow-hidden"
-      >
-        {inView && <WarpPortal/>}
-        <Canvas>
-          {inView && <MonsterAppearance/>}
-        </Canvas>
-      </div>
+    </div>
+    
+    <div 
+      ref={inViewRef}
+      className="h-lvh relative overflow-hidden"
+    >
+      {inView && <WarpPortal/>}
+      <Canvas>
+        {inView && <MonsterAppearance/>}
+      </Canvas>
     </div>
   </>)
 }
