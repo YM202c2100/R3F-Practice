@@ -37,7 +37,7 @@ function App() {
 
       <div 
         ref={inViewRef}
-        className="h-lvh relative"
+        className="h-lvh relative overflow-hidden"
       >
         {inView && <WarpPortal/>}
         <Canvas>
