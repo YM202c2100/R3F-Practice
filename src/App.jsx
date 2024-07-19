@@ -4,9 +4,9 @@ import Example from "./components/Examples/Example"
 import MainTitle from "./components/MainTitle"
 import SampleShader from "./components/Examples/SampleShader"
 import SampleText3D from "./components/Examples/SampleText3D"
-import MonsterAppearance from "./MonsterAppearace/MonsterAppearance"
+import MonsterAppearance from "./components/MonsterAppearace/MonsterAppearance"
 import { useInView } from "react-intersection-observer"
-import WarpPortal from "./MonsterAppearace/WarpPortal"
+import WarpPortal from "./components/MonsterAppearace/WarpPortal"
 
 function App() {
   const [inViewRef, inView, entry] = useInView({
