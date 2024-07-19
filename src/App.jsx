@@ -6,6 +6,7 @@ import SampleShader from "./components/Examples/SampleShader"
 import SampleText3D from "./components/Examples/SampleText3D"
 import MonsterAppearance from "./MonsterAppearace/MonsterAppearance"
 import { useInView } from "react-intersection-observer"
+import WarpPortal from "./MonsterAppearace/WarpPortal"
 
 function App() {
   const [inViewRef, inView, entry] = useInView({
@@ -36,8 +37,9 @@ function App() {
 
       <div 
         ref={inViewRef}
-        className="h-lvh"
+        className="h-lvh relative"
       >
+        {inView && <WarpPortal/>}
         <Canvas>
           {inView && <MonsterAppearance/>}
         </Canvas>
