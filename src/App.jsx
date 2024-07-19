@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber"
-import AboutR3F from "./components/AboutR3F"
-import Example from "./components/Example"
+import AboutR3F from "./components/AboutR3F/AboutR3F"
+import Example from "./components/Examples/Example"
 import MainTitle from "./components/MainTitle"
-import SampleShader from "./components/SampleShader"
-import SampleText3D from "./components/SampleText3D"
-import MonsterAppearance from "./components/MonsterAppearance"
+import SampleShader from "./components/Examples/SampleShader"
+import SampleText3D from "./components/Examples/SampleText3D"
+import MonsterAppearance from "./MonsterAppearace/MonsterAppearance"
 import { useInView } from "react-intersection-observer"
 
 function App() {

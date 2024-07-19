@@ -1,5 +1,5 @@
-import vertexShader from "../shaders/sea/vertex.glsl"
-import fragmentShader from "../shaders/sea/fragment.glsl"
+import vertexShader from "../../shaders/sea/vertex.glsl"
+import fragmentShader from "../../shaders/sea/fragment.glsl"
 import { Color } from "three"
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
