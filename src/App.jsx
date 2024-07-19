@@ -39,7 +39,7 @@ function App() {
     
     {inView &&
       <div 
-        className="fixed inset-0 overflow-hidden"
+        className="fixed inset-0 overflow-hidden flex justify-center items-center"
       >
         <WarpPortal/>
         <Canvas>
