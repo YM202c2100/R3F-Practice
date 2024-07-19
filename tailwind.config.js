@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        warpPortal:"#1c1a34"
+      }
+    },
   },
   plugins: [],
 }
