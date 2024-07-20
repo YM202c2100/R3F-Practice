@@ -8,6 +8,7 @@ function MonsterAppearance(){
 
   useEffect(()=>{
     const action_appear = animations.actions.special
+    const action_roar = animations.actions.skill02
 
     function playAppear() {
       action_appear.setLoop(LoopOnce)
@@ -15,12 +16,23 @@ function MonsterAppearance(){
 
       action_appear.play()
 
+      animations.mixer.addEventListener("finished", playRoar)
+    }
+
+    function playRoar() {
+      action_roar.setLoop(LoopOnce)
+      action_roar.clampWhenFinished = true
+      action_roar.crossFadeFrom(action_appear, 0.5)
+      action_roar.play()
+
+      animations.mixer.removeEventListener("finished", playRoar)
       animations.mixer.addEventListener("finished", playFly)
     }
 
     function playFly() {
       const action_fly = animations.actions.run
-      action_fly.crossFadeFrom(action_appear, 0.5, false).play()
+      action_fly.crossFadeFrom(action_roar, 0.5)
+      action_fly.play()
       animations.mixer.removeEventListener("finished", playFly)
     }
 
