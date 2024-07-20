@@ -20,7 +20,7 @@ function MonsterAppearance(){
 
   useEffect(()=>{
     const action_appear = animations.actions.special
-    const action_roar = animations.actions.skill02
+    const action_roar = animations.actions.skill01
 
     function playAppear() {
       action_appear.setLoop(LoopOnce)
