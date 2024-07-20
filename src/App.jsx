@@ -43,7 +43,7 @@ function App() {
       <div className={`absolute w-full h-full flex items-center justify-center ${inView ? "scale-100":"scale-0"} duration-500`}>
         <WarpPortal/>
       </div>
-      <Canvas camera={{far:7}}>
+      <Canvas camera={{far:10.5,position:[0,-1.8,4.5]}}>
         {inView && <MonsterAppearance/>}
       </Canvas>
     </div>

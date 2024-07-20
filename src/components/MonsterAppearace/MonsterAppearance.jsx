@@ -24,7 +24,7 @@ function MonsterAppearance(){
 
   return(<>
     <ambientLight intensity={2}/>
-    <primitive object={dragonModel.scene} scale={3}/>
+    <primitive object={dragonModel.scene} scale={6} position={[0, -3, 0]}/>
   </>)
 }
 
