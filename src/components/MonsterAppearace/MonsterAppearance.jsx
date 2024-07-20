@@ -1,5 +1,5 @@
-import { useAnimations, useGLTF } from "@react-three/drei"
-import { useFrame } from "@react-three/fiber"
+import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei"
+import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef, useState } from "react"
 import { LoopOnce } from "three"
 
@@ -10,6 +10,8 @@ function MonsterAppearance(){
   const modelRef = useRef()
   const [moving, setMoving] = useState(false)
   const [movingSpeed, setSpeed] = useState(0.01)
+
+  const {camera} = useThree()
 
   useFrame(()=>{
     if(moving && modelRef.current){
@@ -45,6 +47,9 @@ function MonsterAppearance(){
 
     function playFly() {
       setSpeed(0.02)
+
+      camera.far = 100
+      camera.updateProjectionMatrix()
 
       const action_fly = animations.actions.run
       action_fly.crossFadeFrom(action_roar, 0.1)
