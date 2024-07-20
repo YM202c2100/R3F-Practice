@@ -36,7 +36,7 @@ function MonsterAppearance(){
 
       action_roar.setLoop(LoopOnce)
       action_roar.clampWhenFinished = true
-      action_roar.crossFadeFrom(action_appear, 0.5)
+      action_roar.crossFadeFrom(action_appear, 0.3)
       action_roar.play()
 
       animations.mixer.removeEventListener("finished", playRoar)
@@ -47,7 +47,7 @@ function MonsterAppearance(){
       setSpeed(0.02)
 
       const action_fly = animations.actions.run
-      action_fly.crossFadeFrom(action_roar, 0.5)
+      action_fly.crossFadeFrom(action_roar, 0.1)
       action_fly.play()
 
       animations.mixer.removeEventListener("finished", playFly)
