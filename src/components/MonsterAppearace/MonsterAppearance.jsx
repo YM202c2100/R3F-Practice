@@ -15,13 +15,13 @@ function MonsterAppearance(){
 
       action_appear.play()
 
-      animations.mixer.addEventListener("finished", playFlyAction)
+      animations.mixer.addEventListener("finished", playFly)
     }
 
-    const playFlyAction = ()=>{
+    function playFly() {
       const action_fly = animations.actions.run
       action_fly.crossFadeFrom(action_appear, 0.5, false).play()
-      animations.mixer.removeEventListener("finished", playFlyAction)
+      animations.mixer.removeEventListener("finished", playFly)
     }
 
     playAppear()
