@@ -2,6 +2,7 @@ import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei"
 import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef, useState } from "react"
 import { LoopOnce } from "three"
+import { vec3 } from "three/examples/jsm/nodes/Nodes.js"
 
 function MonsterAppearance(){
   const dragonModel = useGLTF("models/dragon/scene.gltf")
@@ -10,14 +11,27 @@ function MonsterAppearance(){
   const modelRef = useRef()
   const [moving, setMoving] = useState(false)
   const [movingSpeed, setSpeed] = useState(0.01)
+  const [lookBack, setLookBack] = useState(false)
 
   const {camera} = useThree()
 
-  useFrame(()=>{
+  let elapsedTime = 0
+  useFrame((state, delta)=>{
     if(moving && modelRef.current){
-      modelRef.current.position.y += movingSpeed
       modelRef.current.position.z += movingSpeed
     }
+
+    
+    if(lookBack){
+      camera.lookAt(0, dragonModel.scene.position.y, 0)
+      camera.rotation.y += Math.PI/6
+      if(elapsedTime < Math.PI){
+        elapsedTime += delta*3
+        camera.position.x = 4.5*Math.sin(elapsedTime)
+        camera.position.z = 4.5*Math.cos(elapsedTime)
+      }
+    }
+
   })
 
   useEffect(()=>{
@@ -46,7 +60,8 @@ function MonsterAppearance(){
     }
 
     function playFly() {
-      setSpeed(0.02)
+      setSpeed(0.1)
+      setLookBack(true)
 
       camera.far = 100
       camera.updateProjectionMatrix()
