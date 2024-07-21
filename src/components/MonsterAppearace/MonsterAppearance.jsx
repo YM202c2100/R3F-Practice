@@ -10,7 +10,7 @@ function MonsterAppearance(){
 
   const modelRef = useRef()
   const [moving, setMoving] = useState(false)
-  const [movingSpeed, setSpeed] = useState(0.01)
+  const [movingSpeed, setSpeed] = useState(0.02)
   const [lookBack, setLookBack] = useState(false)
 
   const {camera} = useThree()
@@ -20,18 +20,6 @@ function MonsterAppearance(){
     if(moving && modelRef.current){
       modelRef.current.position.z += movingSpeed
     }
-
-    
-    if(lookBack){
-      camera.lookAt(0, dragonModel.scene.position.y, 0)
-      camera.rotation.y += Math.PI/6
-      if(elapsedTime < Math.PI){
-        elapsedTime += delta*3
-        camera.position.x = 4.5*Math.sin(elapsedTime)
-        camera.position.z = 4.5*Math.cos(elapsedTime)
-      }
-    }
-
   })
 
   useEffect(()=>{
@@ -70,7 +58,15 @@ function MonsterAppearance(){
       action_fly.crossFadeFrom(action_roar, 0.1)
       action_fly.play()
 
+      animations.mixer.addEventListener("loop", changeCameraView)
       animations.mixer.removeEventListener("finished", playFly)
+    }
+
+    function changeCameraView(){
+      camera.lookAt(0, dragonModel.scene.position.y, 0)
+      camera.rotation.y -= 20 * (Math.PI/180)
+
+      camera.position.z = -4.5
     }
 
     playAppear()
