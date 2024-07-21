@@ -13,6 +13,15 @@ function MonsterAppearance(){
 
   const {camera} = useThree()
 
+  setTimeout(() => {
+    modelRef.current.position.y = -3
+
+    camera.lookAt(0, dragonModel.scene.position.y, 0)
+    camera.rotation.y -= 20 * (Math.PI/180)
+
+    camera.position.z = -4.5
+  }, 10000);
+
   useFrame(()=>{
     if(moving && modelRef.current){
       modelRef.current.position.z += movingSpeed.z
@@ -55,18 +64,18 @@ function MonsterAppearance(){
       action_fly.crossFadeFrom(action_roar, 0.1)
       action_fly.play()
 
-      animations.mixer.addEventListener("loop", changeCameraView)
+      // animations.mixer.addEventListener("loop", changeCameraView)
       animations.mixer.removeEventListener("finished", playFly)
     }
 
-    function changeCameraView(){
-      modelRef.current.position.y = -3
+    // function changeCameraView(){
+    //   modelRef.current.position.y = -3
 
-      camera.lookAt(0, dragonModel.scene.position.y, 0)
-      camera.rotation.y -= 20 * (Math.PI/180)
+    //   camera.lookAt(0, dragonModel.scene.position.y, 0)
+    //   camera.rotation.y -= 20 * (Math.PI/180)
 
-      camera.position.z = -4.5
-    }
+    //   camera.position.z = -4.5
+    // }
 
     playAppear()
   },[])
