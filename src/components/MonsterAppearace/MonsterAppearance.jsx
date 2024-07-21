@@ -10,7 +10,7 @@ function MonsterAppearance(){
 
   const modelRef = useRef()
   const [moving, setMoving] = useState(false)
-  const [movingSpeed, setSpeed] = useState(0.02)
+  const [movingSpeed, setSpeed] = useState({y:0.02, z:0.02})
   const [lookBack, setLookBack] = useState(false)
 
   const {camera} = useThree()
@@ -18,7 +18,8 @@ function MonsterAppearance(){
   let elapsedTime = 0
   useFrame((state, delta)=>{
     if(moving && modelRef.current){
-      modelRef.current.position.z += movingSpeed
+      modelRef.current.position.z += movingSpeed.z
+      modelRef.current.position.y += movingSpeed.y
     }
   })
 
@@ -48,7 +49,7 @@ function MonsterAppearance(){
     }
 
     function playFly() {
-      setSpeed(0.1)
+      setSpeed({y:0, z:0.03})
       setLookBack(true)
 
       camera.far = 100
@@ -63,6 +64,8 @@ function MonsterAppearance(){
     }
 
     function changeCameraView(){
+      modelRef.current.position.y = -3
+
       camera.lookAt(0, dragonModel.scene.position.y, 0)
       camera.rotation.y -= 20 * (Math.PI/180)
 
