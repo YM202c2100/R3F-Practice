@@ -16,7 +16,7 @@ function MonsterAppearance({openPortal}){
   let appearElapsedTime = 0
 
   setTimeout(() => {
-    modelRef.current.position.y = -3
+    modelRef.current.position.y = -3.5
 
     camera.lookAt(0, dragonModel.scene.position.y, 0)
     camera.rotation.y -= 20 * (Math.PI/180)
