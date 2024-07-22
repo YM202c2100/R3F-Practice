@@ -3,7 +3,7 @@ import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef, useState } from "react"
 import { LoopOnce } from "three"
 
-function MonsterAppearance(){
+function MonsterAppearance({openPortal}){
   const dragonModel = useGLTF("models/dragon/scene.gltf")
   const animations = useAnimations(dragonModel.animations, dragonModel.scene)
 
@@ -12,6 +12,8 @@ function MonsterAppearance(){
   const [movingSpeed, setSpeed] = useState({y:0.02, z:0.02})
 
   const {camera} = useThree()
+
+  let appearElapsedTime = 0
 
   setTimeout(() => {
     modelRef.current.position.y = -3
@@ -27,10 +29,15 @@ function MonsterAppearance(){
       modelRef.current.position.z += movingSpeed.z
       modelRef.current.position.y += movingSpeed.y
     }
+    
+    if(appearElapsedTime < 3 && action_appear.time >= 3){
+      appearElapsedTime = action_appear.time
+      openPortal(false)
+    }
   })
 
+  const action_appear = animations.actions.special
   useEffect(()=>{
-    const action_appear = animations.actions.special
     const action_roar = animations.actions.skill01
 
     function playAppear() {

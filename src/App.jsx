@@ -7,13 +7,14 @@ import SampleText3D from "./components/Examples/SampleText3D"
 import MonsterAppearance from "./components/MonsterAppearace/MonsterAppearance"
 import { useInView } from "react-intersection-observer"
 import WarpPortal from "./components/MonsterAppearace/WarpPortal"
+import { useState } from "react"
 
 function App() {
   const [inViewRef, inView, entry] = useInView({
     triggerOnce:true,
     threshold:0.5
   })
-
+  const [isPortalOpen, openPortal] = useState(true)
 
   return (<>
     <div className="container  mx-auto space-y-14">
@@ -40,11 +41,11 @@ function App() {
     <div 
       className="fixed inset-0 overflow-hidden"
     >
-      <div className={`absolute w-full h-full flex items-center justify-center ${inView ? "scale-100":"scale-0"} duration-500`}>
+      <div className={`absolute w-full h-full flex items-center justify-center ${(inView && isPortalOpen) ? "scale-100":"scale-0"} duration-500`}>
         <WarpPortal/>
       </div>
       <Canvas camera={{far:10.5,position:[0,-1.8,4.5]}}>
-        {inView && <MonsterAppearance/>}
+        {inView && <MonsterAppearance openPortal={openPortal}/>}
       </Canvas>
     </div>
   </>)
