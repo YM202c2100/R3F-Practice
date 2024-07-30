@@ -1,13 +1,9 @@
 import { Canvas } from "@react-three/fiber"
-import AboutR3F from "./components/AboutR3F/AboutR3F"
-import Example from "./components/Examples/Example"
-import MainTitle from "./components/MainTitle"
-import SampleShader from "./components/Examples/SampleShader"
-import SampleText3D from "./components/Examples/SampleText3D"
 import MonsterAppearance from "./components/MonsterAppearace/MonsterAppearance"
 import { useInView } from "react-intersection-observer"
 import WarpPortal from "./components/MonsterAppearace/WarpPortal"
 import { useState } from "react"
+import MainContents from "./components/MainContents"
 
 function App() {
   const [inViewRef, inView, entry] = useInView({
@@ -17,26 +13,7 @@ function App() {
   const [isPortalOpen, openPortal] = useState(true)
 
   return (<>
-    <div className="container  mx-auto space-y-14">
-      <MainTitle/>
-
-      <div className="relative md:flex items-center">
-        <AboutR3F />
-      </div>
-
-      <div className="flex flex-col items-center md:flex-row md:justify-around  space-y-10 md:space-y-0">
-        <Example title={"3D Text"}>
-          <SampleText3D/>
-        </Example>
-        <Example 
-          title={"Shader"}
-          camera={{position:[-0.2, 0.8, 0.7]}}
-        >
-          <SampleShader/>
-        </Example>
-      </div>
-      <div ref={inViewRef} className="h-10 bg-slate-400"></div>
-    </div>
+    <MainContents inViewRef={inViewRef}/>
     
     <div 
       className="fixed inset-0 overflow-hidden"
