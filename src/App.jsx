@@ -11,9 +11,33 @@ function App() {
     threshold:0.5
   })
   const [isPortalOpen, openPortal] = useState(true)
+  const [slideContent, setSlide] = useState(false)
 
   return (<>
-    <MainContents inViewRef={inViewRef}/>
+
+    {/* state管理用の仮ボタン */}
+    <button 
+      className="border-black border z-50 fixed"
+      onClick={()=>{setSlide(!slideContent)}}
+    >
+      toggle
+    </button>
+
+    <div 
+      className={`
+        w-full
+        transition-transform duration-300
+        ${slideContent ? "translate-x-full":"translate-x-0"}`}
+    >
+      <MainContents inViewRef={inViewRef}/>
+    </div>
+
+    <div 
+      className={`
+        fixed inset-0 bg-sky-200
+        transition-transform duration-300
+        ${slideContent ? "translate-x-0":"-translate-x-full"}`}
+    ></div>
     
     <div 
       className="fixed inset-0 overflow-hidden"
