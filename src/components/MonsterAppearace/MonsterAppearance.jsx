@@ -3,7 +3,7 @@ import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef, useState } from "react"
 import { LoopOnce } from "three"
 
-function MonsterAppearance({openPortal}){
+function MonsterAppearance({openPortal, setSlideable}){
   const dragonModel = useGLTF("models/dragon/scene.gltf")
   const animations = useAnimations(dragonModel.animations, dragonModel.scene)
 
@@ -16,13 +16,14 @@ function MonsterAppearance({openPortal}){
   let appearElapsedTime = 0
 
   setTimeout(() => {
+    setSlideable(true)
     modelRef.current.position.y = -3.5
 
     camera.lookAt(0, dragonModel.scene.position.y, 0)
     camera.rotation.y -= 20 * (Math.PI/180)
 
     camera.position.z = -4.5
-  }, 10000);
+  }, 12000);
 
   useFrame(()=>{
     if(moving && modelRef.current){

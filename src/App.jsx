@@ -12,16 +12,21 @@ function App() {
   })
   const [isPortalOpen, openPortal] = useState(true)
   const [slideContent, setSlide] = useState(false)
+  const [slideable, setSlideable] = useState(false)
 
   return (<>
 
     {/* state管理用の仮ボタン */}
-    <button 
-      className="border-black border z-50 fixed"
-      onClick={()=>{setSlide(!slideContent)}}
-    >
-      toggle
-    </button>
+    {
+      slideable &&
+      <button 
+        className="border-black border z-50 fixed"
+        onClick={()=>{setSlide(!slideContent)}}
+      >
+        toggle
+      </button>
+    }
+      
     
     <div className="overflow-hidden">
       <div 
@@ -47,8 +52,8 @@ function App() {
       <div className={`absolute w-full h-full flex items-center justify-center ${(inView && isPortalOpen) ? "scale-100":"scale-0"} duration-500`}>
         <WarpPortal/>
       </div>
-      <Canvas camera={{far:10.5,position:[0,-1.8,4.5]}}>
-        {inView && <MonsterAppearance openPortal={openPortal}/>}
+      <Canvas camera={{far:10.5,position:[0,-1.8,4.5]}} className={`transition-transform duration-300 ${slideContent && "translate-x-0 opacity-100"} ${slideable && "-translate-x-full opacity-0"}`}>
+        {inView && <MonsterAppearance openPortal={openPortal} setSlideable={setSlideable}/>}
       </Canvas>
     </div>
   </>)
